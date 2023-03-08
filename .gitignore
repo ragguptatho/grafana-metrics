@@ -7,3 +7,5 @@ cover.out
 *.iml
 metrics-in-grafana.json
 dashboard.json
+dashboard2.json
+grafana-metrics-analyser.json

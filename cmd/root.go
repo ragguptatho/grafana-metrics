@@ -30,7 +30,7 @@ func init() {
 		Args:  cobra.MinimumNArgs(0),
 		RunE: func(cmd *cobra.Command, args []string) error {
 		    log.Printf("Hello")
-		    dashboardAnalyser := dashboard.NewDashboardAnalyser(globalFlags.dashFilesList)
+		    dashboardAnalyser := dashboard_analyser.NewDashboardAnalyser(globalFlags.dashFilesList)
 		    return dashboardAnalyser.Analyse()
 		},
 	}
