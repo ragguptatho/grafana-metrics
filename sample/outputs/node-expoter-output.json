@@ -1,0 +1,1188 @@
+{
+  "metrics": {
+    "node_arp_entries": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_boot_time_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_context_switches_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_cooling_device_cur_state": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_cooling_device_max_state": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_cpu_guest_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {},
+        "mode": {}
+      }
+    },
+    "node_cpu_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {},
+        "mode": {}
+      }
+    },
+    "node_disk_discard_time_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_discards_completed_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_discards_merged_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_io_now": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_io_time_seconds_total": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_io_time_weighted_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_read_bytes_total": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_read_time_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_reads_completed_total": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_reads_merged_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_write_time_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_writes_completed_total": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_writes_merged_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_disk_written_bytes_total": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_entropy_available_bits": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filefd_allocated": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filefd_maximum": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_avail_bytes": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_device_error": {
+      "label_keys": {
+        "device": {},
+        "fstype": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_files": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_files_free": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_free_bytes": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_readonly": {
+      "label_keys": {
+        "device": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_filesystem_size_bytes": {
+      "label_keys": {
+        "device": {},
+        "fstype": {},
+        "instance": {},
+        "job": {},
+        "mountpoint": {}
+      }
+    },
+    "node_forks_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_hwmon_temp_celsius": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_hwmon_temp_crit_alarm_celsius": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_hwmon_temp_crit_celsius": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_hwmon_temp_crit_hyst_celsius": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_hwmon_temp_max_celsius": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_interrupts_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_intr_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_load1": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_load15": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_load5": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Active_anon_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Active_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Active_file_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_AnonHugePages_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_AnonPages_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Bounce_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Buffers_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Cached_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_CommitLimit_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Committed_AS_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_DirectMap1G_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_DirectMap2M_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_DirectMap4k_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Dirty_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_HardwareCorrupted_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_HugePages_Free": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_HugePages_Rsvd": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_HugePages_Surp": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_HugePages_Total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Hugepagesize_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Inactive_anon_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Inactive_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Inactive_file_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_KernelStack_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Mapped_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_MemFree_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_MemTotal_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Mlocked_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_NFS_Unstable_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_PageTables_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Percpu_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_SReclaimable_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_SUnreclaim_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_ShmemHugePages_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_ShmemPmdMapped_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Shmem_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Slab_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_SwapCached_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_SwapFree_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_SwapTotal_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Unevictable_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_VmallocChunk_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_VmallocTotal_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_VmallocUsed_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_WritebackTmp_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_memory_Writeback_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Icmp_InErrors": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Icmp_InMsgs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Icmp_OutMsgs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_IpExt_InOctets": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_IpExt_OutOctets": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Ip_Forwarding": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_ListenDrops": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_ListenOverflows": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_SyncookiesFailed": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_SyncookiesRecv": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_SyncookiesSent": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_TcpExt_TCPSynRetrans": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_ActiveOpens": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_CurrEstab": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_InErrs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_InSegs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_MaxConn": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_OutRsts": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_OutSegs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_PassiveOpens": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Tcp_RetransSegs": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_UdpLite_InErrors": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_InDatagrams": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_InErrors": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_NoPorts": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_OutDatagrams": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_RcvbufErrors": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_netstat_Udp_SndbufErrors": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_carrier": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_mtu_bytes": {
+      "label_keys": {
+        "a": {},
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_bytes_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_compressed_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_drop_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_errs_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_fifo_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_frame_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_multicast_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_receive_packets_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_speed_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_bytes_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_carrier_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_colls_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_compressed_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_drop_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_errs_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_fifo_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_packets_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_transmit_queue_length": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_network_up": {
+      "label_keys": {
+        "instance": {},
+        "job": {},
+        "operstate": {}
+      }
+    },
+    "node_nf_conntrack_entries": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_nf_conntrack_entries_limit": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_power_supply_online": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_processes_max_processes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_processes_max_threads": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_processes_pids": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_processes_state": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_processes_threads": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_procs_blocked": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_procs_running": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_schedstat_running_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_schedstat_timeslices_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_schedstat_waiting_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_scrape_collector_duration_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_scrape_collector_success": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_FRAG_inuse": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_FRAG_memory": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_RAW_inuse": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_alloc": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_inuse": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_mem": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_mem_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_orphan": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_TCP_tw": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_UDPLITE_inuse": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_UDP_inuse": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_UDP_mem": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_UDP_mem_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_sockstat_sockets_used": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_softnet_dropped_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_softnet_processed_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_softnet_times_squeezed_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_systemd_socket_accepted_connections_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_systemd_units": {
+      "label_keys": {
+        "instance": {},
+        "job": {},
+        "state": {}
+      }
+    },
+    "node_textfile_scrape_error": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_time_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_estimated_error_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_frequency_adjustment_ratio": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_loop_time_constant": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_maxerror_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_offset_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_sync_status": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_tai_offset_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_timex_tick_seconds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_oom_kill": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pgfault": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pgmajfault": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pgpgin": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pgpgout": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pswpin": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "node_vmstat_pswpout": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_cpu_seconds_total": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_max_fds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_open_fds": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_resident_memory_max_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_virtual_memory_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    },
+    "process_virtual_memory_max_bytes": {
+      "label_keys": {
+        "instance": {},
+        "job": {}
+      }
+    }
+  }
+}

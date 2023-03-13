@@ -1,0 +1,38 @@
+{
+  "consumer": {
+    "name": "grafana"
+  },
+  "provider": {
+    "name": "prometheus"
+  },
+  "messages": [
+    {
+      "description": "analyse metrics",
+      "providerStates": [
+        {
+          "name": "analyse metrics",
+          "params": null
+        }
+      ],
+      "contents": {
+        "metrics": {
+          "node_arp_entries": {
+            "label_keys": {
+              "instance": {
+              },
+              "job": {
+              }
+            }
+          }
+        }
+      },
+      "matchingRules": {
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}

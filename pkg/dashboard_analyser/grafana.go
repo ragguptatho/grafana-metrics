@@ -12,35 +12,17 @@ import (
 	"github.com/prometheus/prometheus/promql/parser"
 )
 
-type MetricsInGrafana struct {
-	MetricsUsed    []Metric            `json:"metricsUsed"`
-	OverallMetrics []Metric             `json:"-"`
-	Dashboards     []DashboardMetrics  `json:"dashboards"`
-}
-
-type DashboardMetrics struct {
-	Slug        string   `json:"slug"`
-	UID         string   `json:"uid,omitempty"`
-	Title       string   `json:"title"`
-	Metrics     []Metric `json:"metrics"`
-	ParseErrors []string `json:"parse_errors"`
-}
-
-type Metric struct {
-    Name      string    `json:"name"`
-    LabelKeys []string  `json:"label_keys"`
-}
-
-func ParseMetricsInBoard(mig *MetricsInGrafana, board sdk.Board) {
+// parse the metrics into Board given the ConsumerMetrics
+func ParseMetricsInBoard(mig *ConsumerMetrics, board sdk.Board) {
 	var parseErrors []error
-	metrics := make([]Metric, 0)
+	metrics := make(map[string]Metric)
 
 	// Iterate through all the panels and collect metrics
 	for _, panel := range board.Panels {
-		parseErrors = append(parseErrors, metricsFromPanel(*panel, &metrics)...)
+		parseErrors = append(parseErrors, metricsFromPanel(*panel, metrics)...)
 		if panel.RowPanel != nil {
 			for _, subPanel := range panel.RowPanel.Panels {
-				parseErrors = append(parseErrors, metricsFromPanel(subPanel, &metrics)...)
+				parseErrors = append(parseErrors, metricsFromPanel(subPanel, metrics)...)
 			}
 		}
 	}
@@ -48,41 +30,30 @@ func ParseMetricsInBoard(mig *MetricsInGrafana, board sdk.Board) {
 	// Iterate through all the rows and collect metrics
 	for _, row := range board.Rows {
 		for _, panel := range row.Panels {
-			parseErrors = append(parseErrors, metricsFromPanel(panel, &metrics)...)
+			parseErrors = append(parseErrors, metricsFromPanel(panel, metrics)...)
 		}
 	}
 
 	// Process metrics in templating
-	parseErrors = append(parseErrors, metricsFromTemplating(board.Templating, &metrics)...)
+	parseErrors = append(parseErrors, metricsFromTemplating(board.Templating, metrics)...)
 
 	var parseErrs []string
 	for _, err := range parseErrors {
 		parseErrs = append(parseErrs, err.Error())
 	}
-
-	log.Println(metrics)
-
-	metricsInBoard := make([]Metric, 0)
-	for _, metric := range metrics {
-		if metric.Name == "" {
+	
+	for metric := range metrics {
+		if metric == "" {
 			continue
 		}
-
-		metricsInBoard = append(metricsInBoard, metric)
-		mig.OverallMetrics = append(mig.OverallMetrics, metric)
+		mig.Metrics[metric] = metrics[metric]
 	}
 
-	mig.Dashboards = append(mig.Dashboards, DashboardMetrics{
-		Slug:        board.Slug,
-		UID:         board.UID,
-		Title:       board.Title,
-		Metrics:     metricsInBoard,
-		ParseErrors: parseErrs,
-	})
-
+	log.Print(parseErrs)
 }
 
-func metricsFromTemplating(templating sdk.Templating, metrics *[]Metric) []error {
+// parse the metrics from the templated panels
+func metricsFromTemplating(templating sdk.Templating, metrics map[string]Metric) []error {
 	parseErrors := []error{}
 	for _, templateVar := range templating.List {
 		if templateVar.Type != "query" {
@@ -119,12 +90,14 @@ func metricsFromTemplating(templating sdk.Templating, metrics *[]Metric) []error
 	return parseErrors
 }
 
-func metricsFromPanel(panel sdk.Panel, metrics *[]Metric) []error {
+// parse the metrics from the normal panels
+func metricsFromPanel(panel sdk.Panel, metrics map[string]Metric) []error {
 	var parseErrors []error
 
 	targets := panel.GetTargets()
 	if targets == nil {
-		parseErrors = append(parseErrors, fmt.Errorf("unsupported panel type: %q", panel.CommonPanel.Type))
+		parseErrors = append(parseErrors,
+			fmt.Errorf("unsupported panel type: %q", panel.CommonPanel.Type))
 		return parseErrors
 	}
 
@@ -145,7 +118,8 @@ func metricsFromPanel(panel sdk.Panel, metrics *[]Metric) []error {
 	return parseErrors
 }
 
-func parseQuery(query string, metrics *[]Metric) error {
+// parses the promQl
+func parseQuery(query string, metrics map[string]Metric) error {
 	query = strings.ReplaceAll(query, `$__interval`, "5m")
 	query = strings.ReplaceAll(query, `$interval`, "5m")
 	query = strings.ReplaceAll(query, `$resolution`, "5s")
@@ -160,19 +134,22 @@ func parseQuery(query string, metrics *[]Metric) error {
 
 	parser.Inspect(expr, func(node parser.Node, path []parser.Node) error {
 		if n, ok := node.(*parser.VectorSelector); ok {
-		    labelKeys := make([]string, 0)
-		    for _ , matcher := range n.LabelMatchers {
-		        if matcher.Name != "__name__" {
-		            labelKeys = append(labelKeys, matcher.Name)
-		        }
-		    }
-		    metric := Metric{Name: n.Name, LabelKeys: labelKeys}
-            *metrics = append(*metrics, metric)
+			labelKeys := make(map[string]void)
+			for _, matcher := range n.LabelMatchers {
+				if matcher.Name != "__name__" {
+					labelKeys[matcher.Name] = void{}
+				}
+			}
+			// only keep the older labels which are not present in new labelKeys
+			for label := range metrics[n.Name].LabelKeys {
+				if _, ok := labelKeys[label]; !ok {
+					labelKeys[label] = void{}
+				}
+			}
+			metrics[n.Name] = Metric{LabelKeys: labelKeys}
 		}
-
 
 		return nil
 	})
-
 	return nil
 }

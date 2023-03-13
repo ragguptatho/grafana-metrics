@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/grafana-tools/sdk v0.0.0-20220919052116-6562121319fc
+	github.com/pact-foundation/pact-go v1.7.0
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/prometheus v0.42.0
 	github.com/sirupsen/logrus v1.9.0
@@ -21,6 +22,8 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gosimple/slug v1.1.1 // indirect
 	github.com/grafana/regexp v0.0.0-20221122212121-6b5c0a4cb7fd // indirect
+	github.com/hashicorp/go-version v1.5.0 // indirect
+	github.com/hashicorp/logutils v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect

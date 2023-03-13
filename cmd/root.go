@@ -1,58 +1,41 @@
 package cmd
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/shakirshakiel/grafana-metrics-analyser/pkg/dashboard_analyser"
 )
 
 const (
-    flagDashFilesList = "dash-files-list"
+	flagDashFilesList = "dash-files-list"
+	flagDashOutFile   = "dash-out-file"
 )
 
 type flags struct {
-    dashFilesList []string
+	dashFilesList []string
+	dashOutFile   string
 }
 
 var (
-	cmd         *cobra.Command
 	globalFlags flags
-)
-
-func init() {
-    globalFlags = flags{}
-	cmd = &cobra.Command{
+	rootCmd     = &cobra.Command{
 		Use:   "grafana-metrics-analyzer",
 		Short: "utility that helps to analyze prometheus metrics in grafana dashboards",
 		Long:  "utility that helps to analyze prometheus metrics in grafana dashboards",
-		Args:  cobra.MinimumNArgs(0),
 		RunE: func(cmd *cobra.Command, args []string) error {
-		    log.Printf("Hello")
-		    dashboardAnalyser := dashboard_analyser.NewDashboardAnalyser(globalFlags.dashFilesList)
-		    return dashboardAnalyser.Analyse()
+			return nil
 		},
 	}
-	cmd.Flags().StringSliceVarP(&globalFlags.dashFilesList, flagDashFilesList, "", []string{}, "dashboard file to analyze")
+)
 
-	if err := cmd.MarkFlagRequired(flagDashFilesList); err != nil {
-    	log.Println(err)
-    }
+func init() {
+	globalFlags = flags{}
 }
 
-// Main will take the workload of executing/starting the cli, when the command is passed to it.
-func Main() {
-	if err := execute(os.Args[1:]); err != nil {
-		log.Fatal(err)
+func Execute() {
+	if _, err := rootCmd.ExecuteC(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
-}
-
-func execute(args []string) error {
-	cmd.SetArgs(args)
-	_, err := cmd.ExecuteC()
-	if err != nil {
-		return err
-	}
-	return nil
 }

@@ -4,26 +4,27 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"log"
+
 	"github.com/grafana-tools/sdk"
-	"io/ioutil"
 )
 
-type DashboardAnalyser struct{
-    DashFilesList []string
+type DashboardAnalyser struct {
+	DashFilesList []string
+	DashOutFile   string
 }
 
-// NewGenerator returns an instance of a dashboard
-func NewDashboardAnalyser(dashFilesList []string) *DashboardAnalyser {
+// NewDashboardAnalyser returns an instance of a dashboardAnalyser
+func NewDashboardAnalyser(dashFilesList []string, dashOutFile string) *DashboardAnalyser {
 	return &DashboardAnalyser{
-	    DashFilesList: dashFilesList,
+		DashFilesList: dashFilesList,
+		DashOutFile:   dashOutFile,
 	}
 }
 
 // GetDashboardFiles gets all the dashboards in a given path
 func (dashboardAnalyser *DashboardAnalyser) Analyse() error {
-    output := &MetricsInGrafana{}
-    output.OverallMetrics = make([]Metric, 0)
+	output := &ConsumerMetrics{}
+	output.Metrics = make(map[string]Metric)
 
 	for _, file := range dashboardAnalyser.DashFilesList {
 		var board sdk.Board
@@ -35,54 +36,26 @@ func (dashboardAnalyser *DashboardAnalyser) Analyse() error {
 			fmt.Fprintf(os.Stderr, "%s for %s\n", err, file)
 			continue
 		}
-		log.Println(board.ID)
 		ParseMetricsInBoard(output, board)
 	}
 
-	err := writeOut(output, "grafana-metrics-analyser.json")
-    if err != nil {
-    	return err
-    }
+	err := writeOut(output, dashboardAnalyser.DashOutFile)
+	if err != nil {
+		return err
+	}
 
-    return nil
+	return nil
 }
 
-func loadFile(filename string) ([]byte, error) {
-	file, err := os.Open(filename)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	fileinfo, err := file.Stat()
-	if err != nil {
-		return nil, err
-	}
-
-	filesize := fileinfo.Size()
-	buffer := make([]byte, filesize)
-
-	_, err = file.Read(buffer)
-	if err != nil {
-		return nil, err
-	}
-
-	return buffer, nil
-}
-
-func writeOut(mig *MetricsInGrafana, outputFile string) error {
-	metricsUsed := make([]Metric, 0)
-	for _, metric := range mig.OverallMetrics {
-		metricsUsed = append(metricsUsed, metric)
-	}
-	mig.MetricsUsed = metricsUsed
+// marshal the metrics into json format and write to the output file
+func writeOut(mig *ConsumerMetrics, outputFile string) error {
 
 	out, err := json.MarshalIndent(mig, "", "  ")
 	if err != nil {
 		return err
 	}
 
-	if err := ioutil.WriteFile(outputFile, out, os.FileMode(int(0666))); err != nil {
+	if err := os.WriteFile(outputFile, out, os.FileMode(int(0666))); err != nil {
 		return err
 	}
 
