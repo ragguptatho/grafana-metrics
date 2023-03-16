@@ -3,6 +3,7 @@ package dashboard_analyser
 import (
 	"encoding/json"
 	"errors"
+	"os"
 	"testing"
 
 	"github.com/pact-foundation/pact-go/dsl"
@@ -20,11 +21,22 @@ var pact dsl.Pact = createPact()
 
 func TestGrafana(t *testing.T) {
 
+
+	var (
+		dashboardOutputFile string 
+	)
+
+	if os.Getenv("DASH_OUTPUT_FILE") == ""{
+		t.Errorf("Please provide the dashboard output file name using DASH_OUTPUT_FILE variable.")
+	}
+
+	dashboardOutputFile = os.Getenv("DASH_OUTPUT_FILE")
+
+
 	analysedMetrics := pact.AddMessage()
 
-	dashFile := "../../sample/outputs/node-expoter-output.json"
 
-	buffer, err := loadFile(dashFile)
+	buffer, err := loadFile(dashboardOutputFile)
 
 	var metricsInGrafana ConsumerMetrics
 

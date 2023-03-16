@@ -23,9 +23,6 @@ var (
 		Use:   "grafana-metrics-analyzer",
 		Short: "utility that helps to analyze prometheus metrics in grafana dashboards",
 		Long:  "utility that helps to analyze prometheus metrics in grafana dashboards",
-		RunE: func(cmd *cobra.Command, args []string) error {
-			return nil
-		},
 	}
 )
 

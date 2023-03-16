@@ -15,16 +15,7 @@
         }
       ],
       "contents": {
-        "metrics": {
-          "node_arp_entries": {
-            "label_keys": {
-              "instance": {
-              },
-              "job": {
-              }
-            }
-          }
-        }
+        "metrics": null
       },
       "matchingRules": {
       }
